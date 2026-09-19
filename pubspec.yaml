@@ -11,8 +11,10 @@ dependencies:
     sdk: flutter
   flutter_animate: ^4.5.2
   flutter_dotenv: ^6.0.1
+  flutter_native_splash: ^2.4.8
   http: ^1.6.0
   intl: ^0.20.3
+  package_rename: ^1.10.1
   provider: ^6.1.5+1
 
 dev_dependencies:
@@ -25,3 +27,26 @@ flutter:
   assets:
     - .env
     - assets/planete-terre.png
+package_rename_config:
+  android:
+    app_name: "Ma Météo"
+    package_name: "com.yamariel.org.meteo_app"
+
+  ios:
+    app_name: "Ma Météo" 
+    bundle_name: "Ma Météo" 
+    package_name: "com.yamariel.org.meteo_app" 
+
+  web:
+    app_name: "Ma Météo" 
+    short_app_name: "Météo" 
+    description: "Application météo avec Flutter"
+  
+flutter_native_splash:
+  color: "#42a5f5" 
+  image: "assets/planete-terre.png"
+  fullscreen: true
+
+  android_12:
+    color: "#42a5f5"
+    image: "assets/planete-terre.png"
