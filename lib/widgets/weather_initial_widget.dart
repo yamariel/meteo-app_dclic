@@ -12,7 +12,18 @@ class WeatherInitialWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.public, size: 100, color: Colors.white),
+            Container(
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: Colors.white.withValues(alpha: 0.15),
+                shape: BoxShape.circle
+              ),
+              child: Image.asset(
+                'assets/planete-terre.png',
+                height: 100,
+                fit: BoxFit.contain,
+              ),
+            ),
             const SizedBox(height: 20),
             const Text(
               'Recherchez une ville',
