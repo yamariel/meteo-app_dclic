@@ -27,6 +27,7 @@ class _WeatherViewsState extends State<WeatherViews> {
 
   @override
   Widget build(BuildContext context) {
+    final state = context.watch<WeatherController>();
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -37,14 +38,14 @@ class _WeatherViewsState extends State<WeatherViews> {
       ),
       body: AnimatedContainer(
         constraints: const BoxConstraints.expand(),
-        duration: const Duration(microseconds: 800),
+        duration: const Duration(milliseconds: 800),
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: WeatherController().weather != null
+            colors: state.weather != null
                 ? WeatherUtils.getGradientColors(
-                    WeatherController().weather!.iconCode,
+                    state.weather!.iconCode,
                   )
                 : [Colors.blue.shade900, Colors.blue.shade300],
           ),
