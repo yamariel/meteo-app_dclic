@@ -1,4 +1,4 @@
-enum WeatherSatus {
+enum WeatherStatus {
   initial,
   loading,
   success,

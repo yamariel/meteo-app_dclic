@@ -5,35 +5,35 @@ import 'package:meteo_app/services/weather_service.dart';
 
 class WeatherController extends ChangeNotifier {
   final WeatherService _weatherService = WeatherService();
-  WeatherSatus _status = WeatherSatus.initial;
+  WeatherStatus _status = WeatherStatus.initial;
   WeatherModel? _weather;
   String _errorMessage = '';
   final List<String> _searchHistorty = [];
 
   //getters publique
-  WeatherSatus get status => _status;
+  WeatherStatus get status => _status;
   WeatherModel? get weather => _weather;
   String get errorMessage => _errorMessage;
   List<String> get searchHistory => List.unmodifiable(_searchHistorty);
 
   //getters de commodité pour simplifier la vue
-  bool get isLoading => _status == WeatherSatus.loading;
-  bool get hasData => _status == WeatherSatus.success && _weather != null;
-  bool get hasHerror => _status == WeatherSatus.error;
+  bool get isLoading => _status == WeatherStatus.loading;
+  bool get hasData => _status == WeatherStatus.success && _weather != null;
+  bool get hasError => _status == WeatherStatus.error;
 
   Future<void> fetchWeather(String cityName) async {
     if (cityName.trim().isEmpty) return;
-    _status = WeatherSatus.loading;
+    _status = WeatherStatus.loading;
     notifyListeners();
 
     try {
       final result = await _weatherService.fetchWeather(cityName);
       _weather = result;
-      _status = WeatherSatus.success;
+      _status = WeatherStatus.success;
       _updateSearchHistory(cityName);
     } catch (e) {
       _errorMessage = e.toString();
-      _status = WeatherSatus.error;
+      _status = WeatherStatus.error;
     } finally {
       notifyListeners();
     }
