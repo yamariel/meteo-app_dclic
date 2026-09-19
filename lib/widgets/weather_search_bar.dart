@@ -45,49 +45,51 @@ class _WeatherSearchBarState extends State<WeatherSearchBar> {
 
         if (widget.suggestions.isNotEmpty) ...[
           const SizedBox(height: 16),
-          Wrap(
-            spacing: 8,
-            runSpacing: 8,
-            children: widget.suggestions.map((city) {
-              return ActionChip(
-                label: Text(city),
-                backgroundColor: Colors.black,
-                labelStyle: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                side: BorderSide.none,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                onPressed: () {
-                  widget.controller.text = city;
-                  widget.onSearch(city);
-                },
-              );
-            }).toList(),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: widget.suggestions.map((city) {
+                return ActionChip(
+                  label: Text(city),
+                  backgroundColor: Colors.black,
+                  labelStyle: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                  onPressed: () {
+                    widget.controller.text = city;
+                    widget.onSearch(city);
+                  },
+                );
+              }).toList(),
+            ),
           ),
         ],
 
-        const SizedBox(height: 20),
+        const SizedBox(height: 16),
 
-        ElevatedButton.icon(
-          onPressed: () {
-            if (widget.controller.text.trim().isNotEmpty) {
-              widget.onSearch(widget.controller.text);
-            }
-          },
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.white.withValues(alpha: 0.2),
-            foregroundColor: Colors.white,
-            elevation: 0,
-            padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 14),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30),
+        SizedBox(
+          width: double.infinity,
+          child: ElevatedButton.icon(
+            onPressed: () {
+              if (widget.controller.text.trim().isNotEmpty) {
+                widget.onSearch(widget.controller.text);
+              }
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.white.withValues(alpha: 0.2),
+              foregroundColor: Colors.white,
+              elevation: 0,
+              padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 14),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
             ),
+            label: const Text(
+              'Obtenir la météo',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+            ),
+            icon: const Icon(Icons.search),
           ),
-          label: const Text(
-            'Obtenir la météo',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-          ),
-          icon: const Icon(Icons.search),
         ),
       ],
     );
