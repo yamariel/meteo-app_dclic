@@ -9,6 +9,8 @@ class WeatherInitialWidget extends StatelessWidget{
       child: Column(
         children: [
           const Icon(Icons.public, size: 100,),
+          const Text('Recherchez une ville', style: TextStyle(fontSize: 20),),
+          const Text('pour obtenir la météo réel')
         ],
       ),
     );
