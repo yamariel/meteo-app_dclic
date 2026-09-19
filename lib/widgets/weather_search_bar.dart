@@ -36,6 +36,7 @@ class _WeatherSearchBarState extends State<WeatherSearchBar> {
         if (widget.suggestions.isNotEmpty) ...[
           const SizedBox(height: 20),
           Wrap(
+            spacing: 8,
             children: [
               ...widget.suggestions.map((city) {
                 return ActionChip(
