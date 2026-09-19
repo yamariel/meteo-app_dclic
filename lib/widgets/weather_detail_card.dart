@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class WeatherDetailCard extends StatelessWidget {
   final IconData icon;
-  final String label;
   final String value;
+  final String label;
   final Color iconColor;
   const WeatherDetailCard({
     super.key,
@@ -15,10 +15,12 @@ class WeatherDetailCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      child: Padding(
+    return Container(
         padding: const EdgeInsets.all(8.0),
+        decoration: BoxDecoration(
+          color: Colors.white.withValues(alpha: 0.15),
+          borderRadius: BorderRadius.circular(12),
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -26,13 +28,12 @@ class WeatherDetailCard extends StatelessWidget {
             const SizedBox(height: 6),
             Text(
               value,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.white70),
             ),
             const SizedBox(height: 4),
-            Text(label),
+            Text(label, style: TextStyle(color: Colors.white70),),
           ],
         ),
-      ),
-    );
+      );
   }
 }
