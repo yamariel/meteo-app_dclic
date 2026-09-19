@@ -9,6 +9,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_animate: ^4.5.2
+  http: ^1.6.0
+  intl: ^0.20.3
+  provider: ^6.1.5+1
 
 dev_dependencies:
   flutter_test:
