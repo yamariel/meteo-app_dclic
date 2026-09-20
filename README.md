@@ -13,6 +13,7 @@ Conçue avec une architecture **MVC** stricte, elle intègre une UI moderne bas�
   &nbsp;&nbsp;&nbsp;
   <img src="result-1.png" width="250" alt="Résultat Météo" />
   <img src="result-2.png" width="250" alt="Résultat Météo" />
+  <img src="result-3.png" width="250" alt="Résultat Météo" />
 </p>
 
 ## Fonctionnalités principales
@@ -52,7 +53,7 @@ Ce projet respecte le pattern **Modèle-Vue-Contrôleur (MVC)** pour garantir un
 
 ### 2. Cloner le projet
 ```bash
-git clone [https://github.com/yamariel/meteo_app.git](https://github.com/yamariel/meteo_app.git)
+git clone [URL_DU_REPO]
 cd meteo_app
 ````
 ### 3. Installer les dépendances
