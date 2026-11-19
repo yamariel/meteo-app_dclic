@@ -17,6 +17,7 @@ dependencies:
   package_rename: ^1.10.1
   provider: ^6.1.5+1
 
+  material_ui: any
 dev_dependencies:
   flutter_test:
     sdk: flutter

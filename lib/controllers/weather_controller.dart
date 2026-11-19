@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:meteo_app/enums/weather_enum.dart';
 import 'package:meteo_app/models/weather_model.dart';
 import 'package:meteo_app/services/weather_service.dart';

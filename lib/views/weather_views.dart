@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:meteo_app/utils/weather_utilss.dart';
 import 'package:meteo_app/widgets/weather_detail_card.dart';
 import 'package:meteo_app/widgets/weather_widgets.dart';
